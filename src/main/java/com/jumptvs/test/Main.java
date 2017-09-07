@@ -1,6 +1,7 @@
 package com.jumptvs.test;
 
 import java.io.Console;
+import java.io.File;
 import java.util.Scanner;
 
 /**
@@ -12,6 +13,10 @@ public class Main {
 
     public static void main(String[] args){
 
+        File f = new File(".");
+        System.out.println(f.getAbsolutePath());
+
+
         CommandHandler ch = new CommandHandler();
         Scanner scn = new Scanner(System.in);
 
@@ -19,14 +24,23 @@ public class Main {
 
 
         while(!end){
-            printSimbol();
+            try {
+                printSimbol();
 
-            String command = scn.nextLine();
+                String command = scn.nextLine();
 
-            String out = ch.executeCommand(command);
+                String out = ch.executeCommand(command);
 
-            printOut(out);
+                printOut(out);
+            }catch(ShellException se){
+                printError(se.getMessage());
+            }
         }
+
+    }
+
+    private static void printError(String message) {
+        System.out.println("\nERROR: "+message+"\n");
 
     }
 

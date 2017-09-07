@@ -9,6 +9,11 @@ import com.jumptvs.test.shapes.Square;
  */
 public class DonutCommand implements Command {
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
         Donut d = new Donut(
                 Double.parseDouble(args[1]),

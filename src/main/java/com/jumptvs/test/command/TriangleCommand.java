@@ -9,6 +9,11 @@ import com.jumptvs.test.shapes.Triangle;
  */
 public class TriangleCommand implements Command {
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
         Triangle t = new Triangle(
                 Double.parseDouble(args[1]),

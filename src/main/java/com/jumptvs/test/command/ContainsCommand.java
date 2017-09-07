@@ -13,6 +13,11 @@ import java.util.stream.Collectors;
  */
 public class ContainsCommand implements Command {
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
 
         Point p = new Point(Double.parseDouble(args[0]), Double.parseDouble(args[1]));

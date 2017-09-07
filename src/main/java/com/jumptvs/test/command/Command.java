@@ -1,5 +1,7 @@
 package com.jumptvs.test.command;
 
+import com.jumptvs.test.ShellException;
+
 import java.util.List;
 
 /**
@@ -7,8 +9,16 @@ import java.util.List;
  */
 public interface Command {
 
+    public default String executeCommand(String[] args) throws ShellException{
 
-    public String execute(String[] args);
+        this.check(args);
+        return execute(args);
+
+    }
+
+    void check(String[] args);
+
+    public String execute(String[] args) throws ShellException;
 
     public String help();
 

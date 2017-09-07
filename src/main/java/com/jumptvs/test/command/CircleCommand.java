@@ -11,6 +11,11 @@ import java.util.List;
 public class CircleCommand implements Command {
 
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
 
         Circle c = new Circle(

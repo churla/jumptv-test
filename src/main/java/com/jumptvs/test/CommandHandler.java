@@ -24,26 +24,35 @@ public class CommandHandler {
         commands.put("triangle", new TriangleCommand());
         commands.put("donut", new DonutCommand());
         commands.put("contains", new ContainsCommand());
+        commands.put("fileload", new FileLoadCommand(this));
         commands.put("exit", new ExitCommand());
 
     }
 
 
-    public String executeCommand(String command) {
-        String[] cParsed = command.split(" " );
-        String cName = cParsed[0];
+    public String executeCommand(String command) throws ShellException {
 
-        Command c = commands.get(cName);
+        try {
+            String[] cParsed = command.split(" ");
 
-        if(cName.equals("help")){
-            return help();
-        }else if(c == null){
-            if(cParsed.length == 2 && Utils.isDouble(cParsed[0]) && Utils.isDouble(cParsed[1])){
-                c = commands.get("contains");
+            String cName = cParsed[0];
+
+            Command c = commands.get(cName);
+
+            if (cName.equals("help")) {
+                return help();
+            } else if (c != null) {
+                if (cParsed.length == 2 && Utils.isDouble(cParsed[0]) && Utils.isDouble(cParsed[1])) {
+                    c = commands.get("contains");
+                }
+            } else {
+                throw new ShellException("Command not exist, execute help command for read a complete command list");
             }
-        }
 
-        return c.execute(cParsed);
+            return c.executeCommand(cParsed);
+        }catch(Exception e){
+            throw new ShellException(e.getMessage(), e);
+        }
 
     }
 

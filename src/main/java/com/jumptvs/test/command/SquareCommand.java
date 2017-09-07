@@ -8,6 +8,11 @@ import com.jumptvs.test.shapes.Square;
  */
 public class SquareCommand implements Command {
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
         Square s = new Square(
                 Double.parseDouble(args[1]),

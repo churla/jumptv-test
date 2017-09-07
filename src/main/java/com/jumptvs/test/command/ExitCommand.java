@@ -9,6 +9,11 @@ import java.util.List;
  */
 public class ExitCommand implements Command{
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
 
         Main.end = true;

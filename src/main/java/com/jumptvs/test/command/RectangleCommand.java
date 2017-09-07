@@ -9,6 +9,11 @@ import com.jumptvs.test.shapes.Square;
  */
 public class RectangleCommand implements Command {
     @Override
+    public void check(String[] args) {
+
+    }
+
+    @Override
     public String execute(String[] args) {
 
         Rectangle r = new Rectangle(
