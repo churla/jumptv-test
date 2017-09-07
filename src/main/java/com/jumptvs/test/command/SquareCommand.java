@@ -24,4 +24,9 @@ public class SquareCommand implements Command {
 
 
     }
+
+    @Override
+    public String help() {
+        return "- Create a Square shape: square <x> <y> <side>";
+    }
 }

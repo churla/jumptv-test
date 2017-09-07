@@ -24,4 +24,9 @@ public class DonutCommand implements Command {
 
         return d.printData();
     }
+
+    @Override
+    public String help() {
+        return "- Create a Donut shape: donut <x> <y> <max radius> <min radius>";
+    }
 }

@@ -26,4 +26,9 @@ public class TriangleCommand implements Command {
 
         return t.printData();
     }
+
+    @Override
+    public String help() {
+        return "- Create a Triangle shape: <x1> <y1> <x2> <y2> <x3> <y3>";
+    }
 }

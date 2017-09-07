@@ -100,4 +100,13 @@ public class Triangle implements Shape{
     public String printData() {
         return name+": triangle with vertice 1 at ("+x1+", "+y1+") and vertice 2 at ("+x2+", "+y2+") and vertice 1 at ("+x3+", "+y3+")";
     }
+
+    @Override
+    public Double getArea() {
+
+
+        return 0D;
+
+
+    }
 }

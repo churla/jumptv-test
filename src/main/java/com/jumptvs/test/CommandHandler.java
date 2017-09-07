@@ -35,7 +35,9 @@ public class CommandHandler {
 
         Command c = commands.get(cName);
 
-        if(c == null){
+        if(cName.equals("help")){
+            return help();
+        }else if(c == null){
             if(cParsed.length == 2 && Utils.isDouble(cParsed[0]) && Utils.isDouble(cParsed[1])){
                 c = commands.get("contains");
             }
@@ -43,5 +45,16 @@ public class CommandHandler {
 
         return c.execute(cParsed);
 
+    }
+
+    private String help() {
+
+       String help =  commands.values().stream().map(Command::help).reduce((acum, com) ->{
+            if(acum == null) acum = "";
+            acum += "\n"+com;
+            return acum;
+        }).get();
+
+       return help;
     }
 }

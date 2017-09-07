@@ -36,4 +36,9 @@ public class Donut implements Shape{
     public String printData() {
         return name+": donut with vertice at ("+cBig.getX()+", "+cBig.getY()+") and large radius "+cBig.getR() + " and short radius "+cSmall.getR();
     }
+
+    @Override
+    public Double getArea() {
+        return cBig.getArea() - cSmall.getArea();
+    }
 }

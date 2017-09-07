@@ -9,4 +9,6 @@ public interface Shape {
     String getName();
 
     String printData();
+
+    Double getArea();
 }

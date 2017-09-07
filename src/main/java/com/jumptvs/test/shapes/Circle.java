@@ -65,4 +65,9 @@ public class Circle implements Shape{
         return name+": circle with centre at ("+x+", "+y+") and radius "+r;
     }
 
+    @Override
+    public Double getArea() {
+        return Math.PI * (r*r);
+    }
+
 }

@@ -22,7 +22,9 @@ public class ContainsCommand implements Command {
 
 
 
-        String names = shapes.parallelStream().filter(shape -> shape.contains(p)).map(Shape::getName).reduce((acum, elem) -> {
+        String names = shapes.parallelStream().filter(shape -> shape.contains(p))
+                .map(shape -> shape.getName()+": Area "+shape.getArea())
+                .reduce((acum, elem) -> {
             if(acum == null) acum = "";
 
             acum += "\n"+elem;
@@ -30,5 +32,10 @@ public class ContainsCommand implements Command {
         }).get();
 
         return names;
+    }
+
+    @Override
+    public String help() {
+        return "- Find shapes that intersect a point: <X> <Y>";
     }
 }

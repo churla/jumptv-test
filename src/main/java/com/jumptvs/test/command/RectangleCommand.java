@@ -26,4 +26,9 @@ public class RectangleCommand implements Command {
         return r.printData();
 
     }
+
+    @Override
+    public String help() {
+        return "- Create a Rectangle shape: rectangle <x> <y> <side horizontal> <side vertical>";
+    }
 }

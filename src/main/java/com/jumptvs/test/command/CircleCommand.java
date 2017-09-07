@@ -26,4 +26,9 @@ public class CircleCommand implements Command {
 
         return c.printData();
     }
+
+    @Override
+    public String help() {
+        return "- Create a Circle shape: circle <x> <y> <radius>";
+    }
 }

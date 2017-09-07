@@ -15,4 +15,9 @@ public class ExitCommand implements Command{
 
         return "";
     }
+
+    @Override
+    public String help() {
+        return "- End program: exit";
+    }
 }

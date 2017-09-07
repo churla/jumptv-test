@@ -65,4 +65,9 @@ public class Square implements Shape{
     public String printData() {
         return name+": square with vertice at ("+x+", "+y+") and side "+side;
     }
+
+    @Override
+    public Double getArea() {
+        return side * side;
+    }
 }

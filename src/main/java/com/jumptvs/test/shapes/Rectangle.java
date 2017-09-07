@@ -73,4 +73,9 @@ public class Rectangle implements Shape{
     public String printData() {
         return name+": rectangle with vertice at ("+x+", "+y+") and side horizontal "+sideH+" and side vertical "+sideV;
     }
+
+    @Override
+    public Double getArea() {
+        return sideH * sideV;
+    }
 }
