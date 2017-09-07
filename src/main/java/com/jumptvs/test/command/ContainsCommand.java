@@ -6,6 +6,7 @@ import com.jumptvs.test.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by jmartin on 6/09/17.
@@ -19,13 +20,14 @@ public class ContainsCommand implements Command {
         List<Shape> shapes = Shapes.getInstance().getShapes();
         List<Shape> contains = new ArrayList<>();
 
-        String names = "";
 
-        for(Shape s : shapes){
-            if(s.contains(p)){
-                names += "\n"+s.getName();
-            }
-        }
+
+        String names = shapes.parallelStream().filter(shape -> shape.contains(p)).map(Shape::getName).reduce((acum, elem) -> {
+            if(acum == null) acum = "";
+
+            acum += "\n"+elem;
+            return acum;
+        }).get();
 
         return names;
     }
