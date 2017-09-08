@@ -1,6 +1,8 @@
 package com.jumptvs.test.command;
 
 import com.jumptvs.test.Shapes;
+import com.jumptvs.test.ShellException;
+import com.jumptvs.test.Utils;
 import com.jumptvs.test.shapes.Square;
 import com.jumptvs.test.shapes.Triangle;
 
@@ -10,7 +12,13 @@ import com.jumptvs.test.shapes.Triangle;
 public class TriangleCommand implements Command {
     @Override
     public void check(String[] args) {
-
+        if(args.length != 7){ throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[1])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[2])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[3])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[4])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[5])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
+        if(!Utils.isDouble(args[6])) { throw new ShellException("Invalid Parameters for triangle Command.\n"+help()); }
     }
 
     @Override

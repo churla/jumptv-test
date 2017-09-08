@@ -21,6 +21,11 @@ public class FileLoadCommand implements Command {
 
     @Override
     public void check(String[] args) {
+        if(args.length != 2) { throw new ShellException("Invalid Parameters for fileload Command.\n"+help()); }
+
+        File f = new File(args[1]);
+
+        if(!f.exists()){ throw new ShellException("Invalid Parameters for fileload Command.\n"+help()); }
 
     }
 

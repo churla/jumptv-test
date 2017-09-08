@@ -1,6 +1,8 @@
 package com.jumptvs.test.command;
 
 import com.jumptvs.test.Shapes;
+import com.jumptvs.test.ShellException;
+import com.jumptvs.test.Utils;
 import com.jumptvs.test.shapes.Circle;
 
 import java.util.List;
@@ -12,6 +14,11 @@ public class CircleCommand implements Command {
 
     @Override
     public void check(String[] args) {
+
+        if(args.length != 5) { throw new ShellException("Invalid Parameters for circle Command.\n"+help()); }
+        if(!Utils.isDouble(args[1])) { throw new ShellException("Invalid Parameters for circle Command.\n"+help()); }
+        if(!Utils.isDouble(args[2])) { throw new ShellException("Invalid Parameters for circle Command.\n"+help()); }
+        if(!Utils.isDouble(args[3])) { throw new ShellException("Invalid Parameters for circle Command.\n"+help()); }
 
     }
 
