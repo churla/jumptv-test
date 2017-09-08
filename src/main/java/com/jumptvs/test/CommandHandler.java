@@ -25,6 +25,7 @@ public class CommandHandler {
         commands.put("donut", new DonutCommand());
         commands.put("contains", new ContainsCommand());
         commands.put("fileload", new FileLoadCommand(this));
+        //commands.put("overlaps", new OverlapCommand());
         commands.put("exit", new ExitCommand());
 
     }
